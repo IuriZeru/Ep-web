@@ -4,31 +4,41 @@
     box-sizing: border-box;
 }
 body {
-    font-family: "Inter", Arial, sans-serif;
+    font-family: "Rubik", Arial, sans-serif;
+    color: #1c2a0b;
+}
+img {
+    max-width: 100%;
+    display: block;
 }
 .topbar {
     background: #1c2a0b;
     color: #fff;
-    font-size: 14px;
-    padding: 12px 40px;
+    font-size: 13px;
+    padding: 8px max(40px, calc((100% - 1120px) / 2));
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
 }
-.navbar {
+.navbar,
+header > nav {
     background: #fff;
-    padding: 0 40px;
-    height: 76px;
+    padding: 0 max(40px, calc((100% - 1120px) / 2));
+    min-height: 66px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 24px;
     border-bottom: 1px solid #e5e7eb;
 }
 .logo {
-    font-size: 24px;
-    font-weight: 800;
+    font-size: 22px;
+    font-weight: 700;
     color: #1c2a0b;
     text-decoration: none;
+    white-space: nowrap;
 }
 .logo span {
     color: #3f6212;
@@ -36,25 +46,166 @@ body {
 .menu {
     list-style: none;
     display: flex;
-    gap: 32px;
+    gap: 28px;
 }
 .menu a {
+    display: inline-block;
     text-decoration: none;
     color: #475569;
-    font-size: 16px;
+    font-size: 15px;
     padding-bottom: 6px;
+    border-bottom: 2px solid transparent;
 }
 .menu a.active {
     color: #3f6212;
-    font-weight: 600px;
-    border-bottom: 2px solid #3f6212;
+    font-weight: 600;
+    border-bottom-color: #3f6212;
 }
 .btn {
+    display: inline-block;
     background: #3f6212;
     color: #fff;
     text-decoration: none;
     font-weight: 600;
     font-size: 15px;
-    padding: 12px 20px;
+    padding: 12px 22px;
     border-radius: 6px;
+    white-space: nowrap;
+}
+.btn-outline {
+    background: #fff;
+    color: #3f6212;
+    border: 2px solid #3f6212;
+}
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    padding: 56px max(40px, calc((100% - 1120px) / 2)) 80px;
+}
+.hero > * {
+    min-width: 0;
+}
+.hero-img {
+    position: relative;
+}
+.hero-img img {
+    width: 100%;
+    aspect-ratio: 21 / 20;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.discount {
+    position: absolute;
+    top: -30px;
+    right: -34px;
+    width: 116px;
+    height: 116px;
+    border-radius: 50%;
+    background: #b45309;
+    color: #fff;
+    border: 4px solid #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.discount::after {
+    content: "";
+    position: absolute;
+    inset: 5px;
+    border: 1.5px solid rgba(255, 255, 255, 0.85);
+    border-radius: 50%;
+}
+.discount strong {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.discount span {
+    font-size: 12px;
+    font-weight: 500;
+}
+.perk {
+    position: absolute;
+    left: 22px;
+    bottom: -14px;
+    background: #fff;
+    border-radius: 8px;
+    padding: 10px 18px 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+.perk-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #ecf3d9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.perk b {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1c2a0b;
+}
+.perk small {
+    font-size: 12px;
+    color: #64748b;
+}
+.pill {
+    display: inline-block;
+    background: #ecf3d9;
+    color: #3f6212;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 999px;
+}
+.hero-text h1 {
+    font-size: 46px;
+    line-height: 1.15;
+    font-weight: 700;
+    color: #1c2a0b;
+    max-width: 440px;
+    margin: 18px 0 22px;
+}
+.hero-text h1 span {
+    color: #3f6212;
+}
+.hero-text p {
+    font-size: 17px;
+    line-height: 1.6;
+    color: #475569;
+    max-width: 470px;
+    margin-bottom: 28px;
+}
+.hero-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 32px;
+}
+.stats {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 24px 44px;
+}
+.stats b {
+    display: block;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1c2a0b;
+}
+.stats span {
+    display: block;
+    font-size: 13px;
+    color: #64748b;
 }
